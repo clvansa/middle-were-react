@@ -15,6 +15,7 @@ module.exports = ((req,res,next) => {
             res.status(500).json({err:'Something went wrong'})
             throw Error('Something went wrong')
         }
+        console.log(data)
         req.user = data;
         next()
     })

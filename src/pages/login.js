@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 let token;
+const style ={
+    login:{
+        display:"flex",
+        color:"red"
+    }
+}
 export class login extends Component {
     state = {
         username: '',
@@ -30,11 +36,11 @@ export class login extends Component {
     }
     render() {
         return (
-            <div>
+            <div className={style.login}>
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit} action='/'>
-                    <input type="text" name="username" id="username" value={this.state.username} onChange={this.handleChange} />
-                    <input type="password" name="password" id="password" value={this.state.password}  onChange={this.handleChange}/>
+                    <input type="text" name="username" id="username" value={this.state.username} onChange={this.handleChange} required/>
+                    <input type="password" name="password" id="password" value={this.state.password}  onChange={this.handleChange} required/>
                     <input type="submit" value="Submit"/>
                 </form >
             </div>
