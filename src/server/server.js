@@ -23,7 +23,7 @@ app.post('/login', (req, res )=> {
         password: req.body.password
     }
     console.log(data)
-    if(data.username.trim() === '' || data.password.trim === '') return res.status(400).json({error:"should not to be empty"})
+    if(data.username.trim() === '' || data.password.trim() === '') return res.status(400).json({error:"should not to be empty"})
     let token = jwt.sign(data.username,'secret text')
     res.json({token})
   
